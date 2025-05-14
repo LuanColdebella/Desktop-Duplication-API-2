@@ -115,8 +115,10 @@ namespace DesktopDuplication
             }
         }
 
-        public void SaveTextureToFile(SharpDX.Direct3D11.Texture2D texture, string filename)
+        public void SaveTextureToFile(SharpDX.Direct3D11.Texture2D texture, string name )
         {
+            string filename = $@"{Environment.CurrentDirectory}\Frames\{name}";
+
             // Mapeia a textura para acessar os dados  
             var device = texture.Device;
             var mapped = device.ImmediateContext.MapSubresource(texture, 0, SharpDX.Direct3D11.MapMode.Read, SharpDX.Direct3D11.MapFlags.None);
